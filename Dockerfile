@@ -45,7 +45,7 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 ENV GOPROXY=direct
 
 # basic build deps
-RUN yum install -d1 -y pcre2-devel \
+RUN yum install -d1 -y pcre-devel \
     && yum clean all
 
 ENV LANG=en_US.UTF-8
@@ -61,4 +61,4 @@ RUN pip3 install wheel \
     && pip3 install --no-cache-dir install . \
     && rm -rf /tmp/aws-sam-cli
 
-
+ENV HOME=/tmp
